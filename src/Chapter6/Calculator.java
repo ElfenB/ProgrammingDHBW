@@ -7,6 +7,22 @@ public class Calculator {
 		return (a % 2 == 0 ? true : false);
 	}
 	
+	public static double abs(double b) {
+		if (b >= 0) {
+			return b;
+		} else {
+			return Math.abs(b);
+		}
+	}
+	
+	public static int abs(int b) {
+		if (b >= 0) {
+			return b;
+		} else {
+			return Math.abs(b);
+		}
+	}
+	
 	public static void main(String[] args) {
 		int actionNumber;
 		Scanner scan = new Scanner(System.in);
