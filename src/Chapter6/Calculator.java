@@ -1,12 +1,27 @@
 package Chapter6;
 import java.util.Scanner;
 
+/**
+ * @author Benjamin Elfen
+ * 
+ * This program is a calculator in the console. It can calculate many different things such as 
+ * averages, absolutes, ...
+ *
+ */
 public class Calculator {
 
+	/**
+	 * @param a is the input int
+	 * @return
+	 */
 	public static boolean parity(int a) {
 		return (a % 2 == 0 ? true : false);
 	}
 	
+	/**
+	 * @param b is the input double
+	 * @return
+	 */
 	public static double abs(double b) {
 		if (b >= 0) {
 			return b;
@@ -15,6 +30,11 @@ public class Calculator {
 		}
 	}
 	
+	/**
+	 * @param b is the input int
+	 * @return
+	 * This is an overflow function to abs(double) and is meant for int
+	 */
 	public static int abs(int b) {
 		if (b >= 0) {
 			return b;
@@ -23,6 +43,7 @@ public class Calculator {
 		}
 	}
 	
+	// the following methods calculate different average values
 	public static double arithmeticAverage(int a, int b) {
 		return (a + b) / 2;
 	}
@@ -35,19 +56,24 @@ public class Calculator {
 		return 2.0 / ((1.0 / a) + (1.0 / b));
 	}
 	
+	/**
+	 * @param args not used
+	 */
 	public static void main(String[] args) {
-		int actionNumber;
+		// initialise scanner "scan"
 		Scanner scan = new Scanner(System.in);
 		
 		// input
+		// TODO add new actions here
 		System.out.println("Bitte Aktion auswählen:");
 		System.out.println("1. Paritätstest");
 		System.out.println("2. Betrag");
 		System.out.println("3. Mittelwert zweier Zahlen");
-		actionNumber = scan.nextInt();
-		switch (actionNumber) {
+		switch (scan.nextInt()) {
+		// parity
 		case 1:	
 			System.out.println("Bitte ganzzahlige Zahl für Paritätstest eingeben.");
+			// second input for calculations
 			int parityInput = scan.nextInt();
 			if (parity(parityInput)) {
 				System.out.println("Die eingegebene Zahl " + parityInput + " ist gerade.");
@@ -55,12 +81,16 @@ public class Calculator {
 				System.out.println("Die eingegebene Zahl " + parityInput + " ist ungerade.");
 			}
 			break;
+		// absolute number
 		case 2: 
 			System.out.println("Bitte Zahl eingeben, um den Betrag zu berechnen.");
+			// second input for calculations
 			double absInput = scan.nextDouble();
 			System.out.println("Der Betrag der eingegeben Zahl " + absInput + " ist " + abs(absInput) + ".");
 			break;
-		case 3:
+		// averages
+		case 3: 
+			// second input for calculations
 			int a, b;
 			System.out.println("Bitte Zahl 1 eingeben:");
 			a = scan.nextInt();
@@ -70,6 +100,7 @@ public class Calculator {
 			System.out.println("1. Arithmetisches Mittel");
 			System.out.println("2. Geometrisches Mittel");
 			System.out.println("3. Harmonisches Mittel");
+			// select wanted average calculation
 			switch (scan.nextInt()) {
 			case 1:
 				System.out.println("Das arithmetisches Mittel der Zahlen " + a + " und " + b + " ist " + arithmeticAverage(a, b) + ".");
@@ -87,9 +118,7 @@ public class Calculator {
 		default:
 			break;
 		}
-		
-		// output
-		
+		// close scanner
 		scan.close();
 	}
 
