@@ -72,6 +72,14 @@ public class Calculator {
 		return sumOfDivisors;
 	}
 	
+	public static boolean isPerfect(int d) {
+		if (divisorSum(d) / d == 2) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	
 	////////////////////// MAIN
 	/**
@@ -138,7 +146,7 @@ public class Calculator {
 			System.out.println("Bitte natürliche Zahl eingeben:");
 			int divisorInput = scan.nextInt();
 			System.out.println("Die Teilersumme der Zahl " + divisorInput + " ist " + divisorSum(divisorInput) + ".");
-			if (divisorSum(divisorInput) / divisorInput == 2) {
+			if (isPerfect(divisorInput)) {
 				System.out.println("Die Zahl " + divisorInput + " ist vollkommen (die Hälfte ihrer Teilersumme).");
 			}
 			break;
