@@ -57,6 +57,24 @@ public class Calculator {
 	}
 	
 	/**
+	 * @param c is the input int
+	 * @return
+	 */
+	public static int divisorSum(int c) {
+		int sumOfDivisors = 0;
+		for (int i = 1; i <= c; i++) {
+			// if true -> division possible
+			if (c % i == 0) {
+				// sum up divisors
+				sumOfDivisors += i;
+			}
+		}
+		return sumOfDivisors;
+	}
+	
+	
+	////////////////////// MAIN
+	/**
 	 * @param args not used
 	 */
 	public static void main(String[] args) {
@@ -69,6 +87,7 @@ public class Calculator {
 		System.out.println("1. Paritätstest");
 		System.out.println("2. Betrag");
 		System.out.println("3. Mittelwert zweier Zahlen");
+		System.out.println("4. Teilersumme");
 		switch (scan.nextInt()) {
 		// parity
 		case 1:	
@@ -113,6 +132,14 @@ public class Calculator {
 				break;
 			default:
 				break;
+			}
+			break;
+		case 4: 
+			System.out.println("Bitte natürliche Zahl eingeben:");
+			int divisorInput = scan.nextInt();
+			System.out.println("Die Teilersumme der Zahl " + divisorInput + " ist " + divisorSum(divisorInput) + ".");
+			if (divisorSum(divisorInput) / divisorInput == 2) {
+				System.out.println("Die Zahl " + divisorInput + " ist vollkommen (die Hälfte ihrer Teilersumme).");
 			}
 			break;
 		default:
