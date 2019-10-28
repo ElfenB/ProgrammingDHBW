@@ -80,6 +80,13 @@ public class Calculator {
 		}
 	}
 	
+	public static boolean isPrim(int e) {
+		if (divisorSum(e) == (e + 1)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 	/////////////////////// MAIN
 	/**
@@ -96,6 +103,7 @@ public class Calculator {
 		System.out.println("2. Betrag");
 		System.out.println("3. Mittelwert zweier Zahlen");
 		System.out.println("4. Teilersumme");
+		System.out.println("5. Primzahltest");
 		switch (scan.nextInt()) {
 		// parity
 		case 1:	
@@ -148,6 +156,15 @@ public class Calculator {
 			System.out.println("Die Teilersumme der Zahl " + divisorInput + " ist " + divisorSum(divisorInput) + ".");
 			if (isPerfect(divisorInput)) {
 				System.out.println("Die Zahl " + divisorInput + " ist vollkommen (die Hälfte ihrer Teilersumme).");
+			}
+			break;
+		case 5: 
+			System.out.println("Bitte natürliche Zahl für den Primzahltest eingeben:");
+			int primInput = scan.nextInt();
+			if (isPrim(primInput)) {
+				System.out.println("Die Zahl " + primInput + " ist eine Primzahl.");
+			} else {
+				System.out.println("Die Zahl " + primInput + " ist KEINE Primzahl.");
 			}
 			break;
 		default:
