@@ -8,6 +8,6 @@ public class Test1 {
 		
 		System.out.println(ausgabe + (test + nochEinTest));
 		
-		System.out.println(Chapter6.Calculator.abs(-213));
+		System.out.println(java1.chapter6.Calculator.abs(-213));
 	}
 }
