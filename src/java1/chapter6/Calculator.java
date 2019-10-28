@@ -97,7 +97,7 @@ public class Calculator {
 		Scanner scan = new Scanner(System.in);
 		
 		// input
-		// TODO add new actions here (next: 5)
+		// TODO add new actions here (next: 6)
 		System.out.println("Bitte Aktion auswählen:");
 		System.out.println("1. Paritätstest");
 		System.out.println("2. Betrag");
