@@ -81,7 +81,7 @@ public class Calculator {
 	}
 	
 	
-	////////////////////// MAIN
+	/////////////////////// MAIN
 	/**
 	 * @param args not used
 	 */
