@@ -7,5 +7,7 @@ public class Test1 {
 		var ausgabe = "Hallo ";
 		
 		System.out.println(ausgabe + (test + nochEinTest));
+		
+		System.out.println(Chapter6.Calculator.abs(-213));
 	}
 }
