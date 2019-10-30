@@ -130,7 +130,7 @@ public class Calculator {
 	
 	/**
 	 * @param b is number that has to be rounded
-	 * @return
+	 * @return rounded number
 	 */
 	public static double abs(double b) {
 		if (b >= 0) {
@@ -142,7 +142,7 @@ public class Calculator {
 	
 	/**
 	 * @param b is the input int
-	 * @return
+	 * @return rounded number
 	 * This is an overflow function to abs(double) and is meant for int
 	 */
 	public static int abs(int b) {
@@ -154,6 +154,7 @@ public class Calculator {
 	}
 	
 	// the following methods calculate different average values
+	// a and b are the two numbers that get averaged
 	public static double arithmeticAverage(int a, int b) {
 		return (a + b) / 2;
 	}
@@ -168,7 +169,7 @@ public class Calculator {
 	
 	/**
 	 * @param c is the input int
-	 * @return
+	 * @return divisor sum
 	 */
 	public static int divisorSum(int c) {
 		int sumOfDivisors = 0;
@@ -183,6 +184,10 @@ public class Calculator {
 	}
 	
 	// a perfect number is half of its divisor sum
+	/**
+	 * @param d number to test on perfectness
+	 * @return yes or no to perfectness
+	 */
 	public static boolean isPerfect(int d) {
 		if (divisorSum(d) / d == 2) {
 			return true;
@@ -192,6 +197,10 @@ public class Calculator {
 	}
 	
 	// checks if input is a prime
+	/**
+	 * @param e number to test on prime
+	 * @return yes or no to prime
+	 */
 	public static boolean isPrim(int e) {
 		if (divisorSum(e) == (e + 1)) {
 			return true;
@@ -200,12 +209,12 @@ public class Calculator {
 		}
 	}
 	
+	// can calculate f^g
 	/**
 	 * @param f base
 	 * @param g exponent
 	 * @return result
 	 */
-	// can calculate f^g
 	public static double powerRecursive(double f, int g) {
 		if (g > 0) {
 			return f * powerRecursive(f, g - 1);
@@ -217,6 +226,11 @@ public class Calculator {
 	}
 	
 	// can calculate h^i
+	/**
+	 * @param h base
+	 * @param i exponent
+	 * @return result
+	 */
 	public static double powerIterative(double h, int i) {
 		double result = 0.0;
 		if (i == 0) {
@@ -289,11 +303,5 @@ public class Calculator {
 		// close scanner
 		scan.close();
 	}
-
-
-
-
-
-
 
 }
