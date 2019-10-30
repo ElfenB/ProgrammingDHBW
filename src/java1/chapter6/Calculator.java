@@ -11,6 +11,99 @@ import java.util.Scanner;
 
 public class Calculator {
 
+	public static void mainMenu() {
+		// TODO add new actions here (next: 6)
+		System.out.println("Bitte Aktion auswählen:");
+		System.out.println("1. Paritätstest");
+		System.out.println("2. Betrag");
+		System.out.println("3. Mittelwert zweier Zahlen");
+		System.out.println("4. Teilersumme");
+		System.out.println("5. Primzahltest");
+		System.out.println("6. Potenzberechnung");
+	}
+	
+	public static void parityInstructions(Scanner scan) {
+		System.out.println("Bitte ganzzahlige Zahl für Paritätstest eingeben.");
+		// second input for calculations
+		int parityInput = scan.nextInt();
+		if (parity(parityInput)) {
+			System.out.println("Die eingegebene Zahl " + parityInput + " ist gerade.");
+		} else {
+			System.out.println("Die eingegebene Zahl " + parityInput + " ist ungerade.");
+		}
+	}
+	
+	private static void absoluteInstructions(Scanner scan) {
+		System.out.println("Bitte Zahl eingeben, um den Betrag zu berechnen.");
+		// second input for calculations
+		double absInput = scan.nextDouble();
+		System.out.println("Der Betrag der eingegeben Zahl " + absInput + " ist " + abs(absInput) + ".");
+	}
+	
+	private static void averagesInstructions(Scanner scan) {
+		// second input for calculations
+		int a, b;
+		System.out.println("Bitte Zahl 1 eingeben:");
+		a = scan.nextInt();
+		System.out.println("Bitte Zahl 2 eingeben:");
+		b = scan.nextInt();
+		System.out.println("Bitte wählen:");
+		System.out.println("1. Arithmetisches Mittel");
+		System.out.println("2. Geometrisches Mittel");
+		System.out.println("3. Harmonisches Mittel");
+		// select wanted average calculation
+		switch (scan.nextInt()) {
+		case 1:
+			System.out.println("Das arithmetisches Mittel der Zahlen " + a + " und " + b + " ist " + arithmeticAverage(a, b) + ".");
+			break;
+		case 2:
+			System.out.println("Das geometrisches Mittel der Zahlen " + a + " und " + b + " ist " + geometricAverage(a, b) + ".");
+			break;
+		case 3:
+			System.out.println("Das harmonisches Mittel der Zahlen " + a + " und " + b + " ist " + harmonicAverage(a, b) + ".");
+			break;
+		default:
+			break;
+		}
+	}
+	
+	private static void divisorSumInstructions(Scanner scan) {
+		System.out.println("Bitte natürliche Zahl eingeben:");
+		int divisorInput = scan.nextInt();
+		System.out.println("Die Teilersumme der Zahl " + divisorInput + " ist " + divisorSum(divisorInput) + ".");
+		if (isPerfect(divisorInput)) {
+			System.out.println("Die Zahl " + divisorInput + " ist vollkommen (die Hälfte ihrer Teilersumme).");
+		}
+	}
+	
+	private static void primeInstructions(Scanner scan) {
+		System.out.println("Bitte natürliche Zahl für den Primzahltest eingeben:");
+		int primInput = scan.nextInt();
+		if (isPrim(primInput)) {
+			System.out.println("Die Zahl " + primInput + " ist eine Primzahl.");
+		} else {
+			System.out.println("Die Zahl " + primInput + " ist KEINE Primzahl.");
+		}
+	}
+	
+	private static void powerInstructions(Scanner scan) {
+		System.out.println("Bitte Basis eingeben:");
+		int powerInputBase = scan.nextInt();
+		System.out.println("Bitte natürlichen Exponent eingeben:");
+		int powerInputExponent = scan.nextInt();
+		System.out.println("Bitte gewünschte Berechnungsmethode auswählen:");
+		System.out.println("1. Rekursiv");
+		System.out.println("2. Iterativ");
+		double powerResult = 0.0;
+		int scannedMethod = scan.nextInt();
+		if (scannedMethod == 1) {
+			powerResult = powerRecursive(powerInputBase, powerInputExponent);
+		} else if (scannedMethod == 2) {
+			powerResult = powerIterative(powerInputBase, powerInputExponent);
+		}
+		System.out.println("Das Ergebnis von " + powerInputBase + " hoch " + powerInputExponent + " ist: " + powerResult);
+	}
+	
 	/**
 	 * @param a is the number that's checked
 	 * @return
@@ -128,102 +221,52 @@ public class Calculator {
 	 * @param args not used
 	 */
 	public static void main(String[] args) {
+		// brings up main menu
+		mainMenu();
+		boolean finished = false;
+		
 		// initialise scanner "scan"
 		Scanner scan = new Scanner(System.in);
 		
-		// input
-		// TODO add new actions here (next: 6)
-		System.out.println("Bitte Aktion auswählen:");
-		System.out.println("1. Paritätstest");
-		System.out.println("2. Betrag");
-		System.out.println("3. Mittelwert zweier Zahlen");
-		System.out.println("4. Teilersumme");
-		System.out.println("5. Primzahltest");
-		System.out.println("6. Potenzberechnung");
-		switch (scan.nextInt()) {
-		// parity
-		case 1:	
-			System.out.println("Bitte ganzzahlige Zahl für Paritätstest eingeben.");
-			// second input for calculations
-			int parityInput = scan.nextInt();
-			if (parity(parityInput)) {
-				System.out.println("Die eingegebene Zahl " + parityInput + " ist gerade.");
-			} else {
-				System.out.println("Die eingegebene Zahl " + parityInput + " ist ungerade.");
-			}
-			break;
-		// absolute number
-		case 2: 
-			System.out.println("Bitte Zahl eingeben, um den Betrag zu berechnen.");
-			// second input for calculations
-			double absInput = scan.nextDouble();
-			System.out.println("Der Betrag der eingegeben Zahl " + absInput + " ist " + abs(absInput) + ".");
-			break;
-		// averages
-		case 3: 
-			// second input for calculations
-			int a, b;
-			System.out.println("Bitte Zahl 1 eingeben:");
-			a = scan.nextInt();
-			System.out.println("Bitte Zahl 2 eingeben:");
-			b = scan.nextInt();
-			System.out.println("Bitte wählen:");
-			System.out.println("1. Arithmetisches Mittel");
-			System.out.println("2. Geometrisches Mittel");
-			System.out.println("3. Harmonisches Mittel");
-			// select wanted average calculation
+		
+		while (!finished) {
+			// input
 			switch (scan.nextInt()) {
+			// parity
 			case 1:
-				System.out.println("Das arithmetisches Mittel der Zahlen " + a + " und " + b + " ist " + arithmeticAverage(a, b) + ".");
+				parityInstructions(scan);
 				break;
+			// absolute number
 			case 2:
-				System.out.println("Das geometrisches Mittel der Zahlen " + a + " und " + b + " ist " + geometricAverage(a, b) + ".");
+				absoluteInstructions(scan);
 				break;
+			// averages
 			case 3:
-				System.out.println("Das harmonisches Mittel der Zahlen " + a + " und " + b + " ist " + harmonicAverage(a, b) + ".");
+				averagesInstructions(scan);
+				break;
+			// sum of divisors
+			case 4:
+				divisorSumInstructions(scan);
+				break;
+			// prime tester
+			case 5:
+				primeInstructions(scan);
+				break;
+			// power calculator
+			case 6:
+				powerInstructions(scan);
 				break;
 			default:
 				break;
 			}
-			break;
-		case 4: 
-			System.out.println("Bitte natürliche Zahl eingeben:");
-			int divisorInput = scan.nextInt();
-			System.out.println("Die Teilersumme der Zahl " + divisorInput + " ist " + divisorSum(divisorInput) + ".");
-			if (isPerfect(divisorInput)) {
-				System.out.println("Die Zahl " + divisorInput + " ist vollkommen (die Hälfte ihrer Teilersumme).");
-			}
-			break;
-		case 5: 
-			System.out.println("Bitte natürliche Zahl für den Primzahltest eingeben:");
-			int primInput = scan.nextInt();
-			if (isPrim(primInput)) {
-				System.out.println("Die Zahl " + primInput + " ist eine Primzahl.");
-			} else {
-				System.out.println("Die Zahl " + primInput + " ist KEINE Primzahl.");
-			}
-			break;
-		case 6: 
-			System.out.println("Bitte Basis eingeben:");
-			int powerInputBase = scan.nextInt();
-			System.out.println("Bitte natürlichen Exponent eingeben:");
-			int powerInputExponent = scan.nextInt();
-			System.out.println("Bitte gewünschte Berechnungsmethode auswählen:");
-			System.out.println("1. Rekursiv");
-			System.out.println("2. Iterativ");
-			double powerResult = 0.0;
-			int scannedMethod = scan.nextInt();
-			if (scannedMethod == 1) {
-				powerResult = powerRecursive(powerInputBase, powerInputExponent);
-			} else if (scannedMethod == 2) {
-				powerResult = powerIterative(powerInputBase, powerInputExponent);
-			}
-			System.out.println("Das Ergebnis von " + powerInputBase + " hoch " + powerInputExponent + " ist: " + powerResult);
-		default:
-			break;
 		}
 		// close scanner
 		scan.close();
 	}
+
+
+
+
+
 
 }
