@@ -123,7 +123,6 @@ public class Calculator {
 		System.out.println("-----------------------------------------");
 		System.out.println("//\\\\ ><Das Programm wurde beendet.>< //\\\\");
 		System.out.println("-----------------------------------------");
-		finished = true;
 	}
 	
 	/**
@@ -282,39 +281,47 @@ public class Calculator {
 			// parity
 			case "0":
 				terminateProgram();
+				finished = true;
 				break;
 			case "1":
 				parityInstructions(scan);
 				terminateProgram();
+				finished = true;
 				break;
 			// absolute number
 			case "2":
 				absoluteInstructions(scan);
 				terminateProgram();
+				finished = true;
 				break;
 			// averages
 			case "3":
 				averagesInstructions(scan);
 				terminateProgram();
+				finished = true;
 				break;
 			// sum of divisors
 			case "4":
 				divisorSumInstructions(scan);
 				terminateProgram();
+				finished = true;
 				break;
 			// prime tester
 			case "5":
 				primeInstructions(scan);
 				terminateProgram();
+				finished = true;
 				break;
 			// power calculator
 			case "6":
 				powerInstructions(scan);
 				terminateProgram();
+				finished = true;
 				break;
 			case "7":
 				digitSumInstructions(scan);
 				terminateProgram();
+				finished = true;
 				break;
 			default:
 				mainMenu();
