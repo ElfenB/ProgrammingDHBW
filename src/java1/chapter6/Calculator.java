@@ -118,7 +118,7 @@ public class Calculator {
 	public static boolean finished = false;
 	
 	// termination message
-	private static void terminateProgram() {
+	public static void terminateProgram() {
 		System.out.println("");
 		System.out.println("-----------------------------------------");
 		System.out.println("//\\\\ ><Das Programm wurde beendet.>< //\\\\");
