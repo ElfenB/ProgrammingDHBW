@@ -24,10 +24,37 @@ public class TextUtilities {
 		System.out.println("Der eingegebene Text \"" + input + "\" ist umgedreht: \"" + reverseText(input) + "\".");
 	}
 	
+	public static boolean isPalindrom(String input) {
+		Boolean palindrom = true;
+		
+		// loop's high is word length (-1 due it's starting with 0)
+		for (int i = 0; i < input.length() - 1; i++) {
+			// checks if letters of given word are same at beginning and end
+			if (!(input.charAt(i) == input.charAt(input.length() - 1 - i))) {
+				palindrom = false;
+			}
+		}
+		return palindrom;		
+	}
+	
+	public static void palindromInstructions(Scanner scan) {
+		
+		System.out.println("Bitte zu-testendes Wort eingeben:");
+		String input = scan.nextLine();
+		
+		// Output lines with check if word is palindrom or not
+		if (isPalindrom(input)) {
+			System.out.println("Das von Ihnen eingegebene Wort \"" + input + "\" ist ein Palindrom.");
+		} else {
+			System.out.println("Das von Ihnen eingegebene Wort \"" + input + "\" ist KEIN Palindrom.");
+		}
+	}
+	
 	public static void mainMenu() {
 		System.out.println("============= Text-Werkzeuge =============");
 		System.out.println("Bitte Aktion auswählen:");
 		System.out.println("1: Text umkehren");
+		System.out.println("2: Palindrom-Test");
 		System.out.println("0: Programm beenden");
 		System.out.println("==========================================");
 	}
@@ -39,7 +66,7 @@ public class TextUtilities {
 			Calculator.terminateProgram();
 			break;
 		case "2":
-			
+			palindromInstructions(scan);
 			Calculator.terminateProgram();
 			break;
 //		case "3":
