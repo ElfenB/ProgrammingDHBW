@@ -21,6 +21,7 @@ public class Calculator {
 		System.out.println("4: Teilersumme");
 		System.out.println("5: Primzahltest");
 		System.out.println("6: Potenzberechnung");
+		System.out.println("7: Quersumme");
 		System.out.println("0: Programm beenden");
 		System.out.println("==========================================");
 	}
@@ -105,6 +106,12 @@ public class Calculator {
 			powerResult = powerIterative(powerInputBase, powerInputExponent);
 		}
 		System.out.println("Das Ergebnis von " + powerInputBase + " hoch " + powerInputExponent + " ist: " + powerResult);
+	}
+	
+	public static void digitSumInstructions(Scanner scan) {
+		System.out.println("Bitte Zahl eingeben, um die Quersumme zu berechnen:");
+		int digitSumInput = scan.nextInt();
+		System.out.println("Die Quersumme von " + digitSumInput + " ist " + digitSum(digitSumInput));
 	}
 	
 	// variable for while loop in main to steer input better
@@ -244,6 +251,16 @@ public class Calculator {
 		}
 	}
 	
+	public static int digitSum(int value) {
+		int result = 0;
+        
+        while (value > 0) {
+        	result += value % 10;
+        	value = value / 10;
+		}
+        return result;
+	}
+	
 	// TODO include menu method to display menu again when switch is empty (Enter to exit function)
 	/////////////////////// MAIN
 	/**
@@ -293,6 +310,10 @@ public class Calculator {
 			// power calculator
 			case "6":
 				powerInstructions(scan);
+				terminateProgram();
+				break;
+			case "7":
+				digitSumInstructions(scan);
 				terminateProgram();
 				break;
 			default:
