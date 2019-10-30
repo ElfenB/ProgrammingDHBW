@@ -107,8 +107,10 @@ public class Calculator {
 		System.out.println("Das Ergebnis von " + powerInputBase + " hoch " + powerInputExponent + " ist: " + powerResult);
 	}
 	
+	// variable for while loop in main to steer input better
 	public static boolean finished = false;
 	
+	// termination message
 	private static void terminateProgram() {
 		System.out.println("");
 		System.out.println("-----------------------------------------");
@@ -241,8 +243,10 @@ public class Calculator {
 		// initialise scanner "scan"
 		Scanner scan = new Scanner(System.in);
 		
+		// boolean gets true in terminateProgram() method and is only for ending the while loop
 		while (!finished) {
 			// input
+			// changed from nextInt to nextLine to give out main menu again and again
 			switch (scan.nextLine()) {
 			// parity
 			case "0":
