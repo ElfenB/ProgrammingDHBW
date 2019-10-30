@@ -8,10 +8,11 @@ import java.util.Scanner;
  * averages, absolutes, ...
  *
  */
+
 public class Calculator {
 
 	/**
-	 * @param a is the input int
+	 * @param a is the number that's checked
 	 * @return
 	 */
 	public static boolean parity(int a) {
@@ -20,7 +21,7 @@ public class Calculator {
 	}
 	
 	/**
-	 * @param b is the input double
+	 * @param b is number that has to be rounded
 	 * @return
 	 */
 	public static double abs(double b) {
@@ -73,6 +74,7 @@ public class Calculator {
 		return sumOfDivisors;
 	}
 	
+	// a perfect number is half of its divisor sum
 	public static boolean isPerfect(int d) {
 		if (divisorSum(d) / d == 2) {
 			return true;
@@ -81,6 +83,7 @@ public class Calculator {
 		}
 	}
 	
+	// checks if input is a prime
 	public static boolean isPrim(int e) {
 		if (divisorSum(e) == (e + 1)) {
 			return true;
@@ -94,6 +97,7 @@ public class Calculator {
 	 * @param g exponent
 	 * @return result
 	 */
+	// can calculate f^g
 	public static double powerRecursive(double f, int g) {
 		if (g > 0) {
 			return f * powerRecursive(f, g - 1);
@@ -104,6 +108,7 @@ public class Calculator {
 		}
 	}
 	
+	// can calculate h^i
 	public static double powerIterative(double h, int i) {
 		double result = 0.0;
 		if (i == 0) {
