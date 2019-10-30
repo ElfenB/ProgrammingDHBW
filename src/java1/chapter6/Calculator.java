@@ -15,7 +15,8 @@ public class Calculator {
 	 * @return
 	 */
 	public static boolean parity(int a) {
-		return (a % 2 == 0 ? true : false);
+//		return (a % 2 == 0 ? true : false);
+		return a % 2 == 0;
 	}
 	
 	/**
@@ -88,6 +89,35 @@ public class Calculator {
 		}
 	}
 	
+	/**
+	 * @param f base
+	 * @param g exponent
+	 * @return result
+	 */
+	public static double powerRecursive(double f, int g) {
+		if (g > 0) {
+			return f * powerRecursive(f, g - 1);
+		} else if (g < 0) {
+			return f * powerRecursive(f, g + 1);
+		} else {
+			return 1.0;
+		}
+	}
+	
+	public static double powerIterative(double h, int i) {
+		double result = 0.0;
+		if (i == 0) {
+			return 1;
+		} else {
+			result = h;
+			for (int j = 1; j < i; j++) {
+				result *= h;
+			}
+			return result;
+		}
+	}
+	
+	// TODO include menu method to display menu again when switch is empty (Enter to exit function)
 	/////////////////////// MAIN
 	/**
 	 * @param args not used
@@ -104,6 +134,7 @@ public class Calculator {
 		System.out.println("3. Mittelwert zweier Zahlen");
 		System.out.println("4. Teilersumme");
 		System.out.println("5. Primzahltest");
+		System.out.println("6. Potenzberechnung");
 		switch (scan.nextInt()) {
 		// parity
 		case 1:	
@@ -167,6 +198,22 @@ public class Calculator {
 				System.out.println("Die Zahl " + primInput + " ist KEINE Primzahl.");
 			}
 			break;
+		case 6: 
+			System.out.println("Bitte Basis eingeben:");
+			int powerInputBase = scan.nextInt();
+			System.out.println("Bitte natürlichen Exponent eingeben:");
+			int powerInputExponent = scan.nextInt();
+			System.out.println("Bitte gewünschte Berechnungsmethode auswählen:");
+			System.out.println("1. Rekursiv");
+			System.out.println("2. Iterativ");
+			double powerResult = 0.0;
+			int scannedMethod = scan.nextInt();
+			if (scannedMethod == 1) {
+				powerResult = powerRecursive(powerInputBase, powerInputExponent);
+			} else if (scannedMethod == 2) {
+				powerResult = powerIterative(powerInputBase, powerInputExponent);
+			}
+			System.out.println("Das Ergebnis von " + powerInputBase + " hoch " + powerInputExponent + " ist: " + powerResult);
 		default:
 			break;
 		}

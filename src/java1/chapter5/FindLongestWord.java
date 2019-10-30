@@ -27,7 +27,7 @@ public class FindLongestWord {
 		System.out.println("Bitte Text eingeben, um das längste Wort/die längsten Wörter finden zu können.");
 		String input = scan.nextLine();
 		
-		// TODO weniger abgefuckte Lösung finden als das Folgende
+		// TODO weniger abgefuckte Lösung finden als das Folgende?
 		// delete spaces at beginning and end
 		input.trim();
 		// B1G TR1CK !!! Add space on input to run for-loop one time longer to cover the last word, too
