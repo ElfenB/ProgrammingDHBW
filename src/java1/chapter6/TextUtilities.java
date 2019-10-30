@@ -50,11 +50,34 @@ public class TextUtilities {
 		}
 	}
 	
+	public static int wordCount(String input) {
+        int numberOfWords = 0;
+        // delete starting and ending spaces
+        input = input.trim();
+        // scan the sentence for spaces
+        for (int i = 0; i < input.length() - 1; i++) {
+			if (input.charAt(i) == ' ') {
+				// for each space add 1 word
+				numberOfWords++;
+			}
+		}
+        // add the one word that's usually after the last space
+        numberOfWords += 1;
+        return numberOfWords;
+	}
+	
+	public static void wordCountInstructions(Scanner scan) {
+		System.out.println("Bitte Text eingeben, um die Wörter zu zählen:");
+		String input = scan.nextLine();
+		System.out.println("Die Anzahl der Worte in \"" + input + "\" ist " + wordCount(input));
+	}
+	
 	public static void mainMenu() {
 		System.out.println("============= Text-Werkzeuge =============");
 		System.out.println("Bitte Aktion auswählen:");
 		System.out.println("1: Text umkehren");
 		System.out.println("2: Palindrom-Test");
+		System.out.println("3: Wörter zählen");
 		System.out.println("0: Programm beenden");
 		System.out.println("==========================================");
 	}
@@ -69,10 +92,10 @@ public class TextUtilities {
 			palindromInstructions(scan);
 			Calculator.terminateProgram();
 			break;
-//		case "3":
-//			
-//			Calculator.terminateProgram();
-//			break;
+		case "3":
+			wordCountInstructions(scan);
+			Calculator.terminateProgram();
+			break;
 //		case "4":
 //			
 //			Calculator.terminateProgram();
