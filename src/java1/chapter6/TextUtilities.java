@@ -341,6 +341,7 @@ public class TextUtilities {
 		System.out.println("2: Palindrom-Test");
 		System.out.println("3: Wörter zählen");
 		System.out.println("4: Caesar-Chiffre");
+		System.out.println("5: Längstes Wort ermitteln");
 		System.out.println("0: Programm beenden");
 		System.out.println("==========================================");
 	}
