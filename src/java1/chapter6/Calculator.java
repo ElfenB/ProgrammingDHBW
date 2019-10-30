@@ -12,14 +12,17 @@ import java.util.Scanner;
 public class Calculator {
 
 	public static void mainMenu() {
-		// TODO add new actions here (next: 6)
+		// TODO add new actions here (next: 7)
+		System.out.println("============= Taschenrechner =============");
 		System.out.println("Bitte Aktion auswählen:");
-		System.out.println("1. Paritätstest");
-		System.out.println("2. Betrag");
-		System.out.println("3. Mittelwert zweier Zahlen");
-		System.out.println("4. Teilersumme");
-		System.out.println("5. Primzahltest");
-		System.out.println("6. Potenzberechnung");
+		System.out.println("1: Paritätstest");
+		System.out.println("2: Betrag");
+		System.out.println("3: Mittelwert zweier Zahlen");
+		System.out.println("4: Teilersumme");
+		System.out.println("5: Primzahltest");
+		System.out.println("6: Potenzberechnung");
+		System.out.println("0: Programm beenden");
+		System.out.println("==========================================");
 	}
 	
 	public static void parityInstructions(Scanner scan) {
@@ -102,6 +105,16 @@ public class Calculator {
 			powerResult = powerIterative(powerInputBase, powerInputExponent);
 		}
 		System.out.println("Das Ergebnis von " + powerInputBase + " hoch " + powerInputExponent + " ist: " + powerResult);
+	}
+	
+	public static boolean finished = false;
+	
+	private static void terminateProgram() {
+		System.out.println("");
+		System.out.println("-----------------------------------------");
+		System.out.println("//\\\\ ><Das Programm wurde beendet.>< //\\\\");
+		System.out.println("-----------------------------------------");
+		finished = true;
 	}
 	
 	/**
@@ -223,46 +236,56 @@ public class Calculator {
 	public static void main(String[] args) {
 		// brings up main menu
 		mainMenu();
-		boolean finished = false;
+		finished = false;
 		
 		// initialise scanner "scan"
 		Scanner scan = new Scanner(System.in);
 		
-		
 		while (!finished) {
 			// input
-			switch (scan.nextInt()) {
+			switch (scan.nextLine()) {
 			// parity
-			case 1:
+			case "0":
+				terminateProgram();
+				break;
+			case "1":
 				parityInstructions(scan);
+				terminateProgram();
 				break;
 			// absolute number
-			case 2:
+			case "2":
 				absoluteInstructions(scan);
+				terminateProgram();
 				break;
 			// averages
-			case 3:
+			case "3":
 				averagesInstructions(scan);
+				terminateProgram();
 				break;
 			// sum of divisors
-			case 4:
+			case "4":
 				divisorSumInstructions(scan);
+				terminateProgram();
 				break;
 			// prime tester
-			case 5:
+			case "5":
 				primeInstructions(scan);
+				terminateProgram();
 				break;
 			// power calculator
-			case 6:
+			case "6":
 				powerInstructions(scan);
+				terminateProgram();
 				break;
 			default:
+				mainMenu();
 				break;
 			}
 		}
 		// close scanner
 		scan.close();
 	}
+
 
 
 
