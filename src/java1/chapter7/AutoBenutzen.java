@@ -9,5 +9,5 @@ public class AutoBenutzen {
 		System.out.println(auto.insassenAnzahl);
 		System.out.println(auto.tankInhalt);
 	}
-
+	
 }
