@@ -8,13 +8,30 @@ public class Auto {
 	public int insassenAnzahl;
 	public int tankInhalt;
 	
-	public Auto(String kennzeichen, String modell, int insassenAnzahl, int tankInhalt) {
+	public Auto(String kennzeichen, String modell) {
 		this.kennzeichen = kennzeichen;
 		this.modell = modell;
-		this.insassenAnzahl = insassenAnzahl;
-		this.tankInhalt = tankInhalt;
 	}
 
+	public int einsteigen(int personen) {
+		insassenAnzahl += personen;
+		return insassenAnzahl;
+	}
 	
+	public int aussteigen(int personen) {
+		insassenAnzahl -= personen;
+		return insassenAnzahl;
+	}
+	
+	
+	public int tanken(int liter) {
+		tankInhalt += liter;
+		return tankInhalt;
+	}
+	
+	public int verbrauchen(int liter) {
+		tankInhalt -= liter;
+		return tankInhalt;
+	}
 	
 }
