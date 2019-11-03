@@ -77,7 +77,11 @@ public class Bruch {
 		}
 	}
 	
-	
-	
-	
+	public boolean istGleich(Bruch input) {
+		if (zaehler == input.zaehler & nenner == input.nenner) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

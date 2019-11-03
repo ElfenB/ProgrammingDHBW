@@ -19,5 +19,16 @@ public class BruchBenutzen {
 		System.out.println(bruch1.toString() + " hoch 3 ist " + bruch1.potenzieren(3));
 		System.out.println(bruch1.toString() + " hoch -3 ist " + bruch1.potenzieren(-3));
 		System.out.println(bruch2.toString() + " hoch 0 ist " + bruch2.potenzieren(0));
+		Bruch bruch3 = new Bruch(1, 2);
+		if (bruch1.istGleich(bruch3)) {
+			System.out.println("Bruch " + bruch1.toString() + " und " + bruch3.toString() + " sind gleich.");
+		} else {
+			System.out.println("Bruch " + bruch1.toString() + " und " + bruch3.toString() + " sind NICHT gleich.");
+		}
+		if (bruch2.istGleich(bruch3)) {
+			System.out.println("Bruch " + bruch2.toString() + " und " + bruch3.toString() + " sind gleich.");
+		} else {
+			System.out.println("Bruch " + bruch2.toString() + " und " + bruch3.toString() + " sind NICHT gleich.");
+		}
 	}
 }
