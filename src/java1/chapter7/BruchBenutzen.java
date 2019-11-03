@@ -1,5 +1,12 @@
 package java1.chapter7;
 
+/**
+ * @author Benjamin Elfen
+ * 
+ * First test class while coding Bruch class
+ * Just simple tests with numbers
+ *
+ */
 public class BruchBenutzen {
 	public static void main(String[] args) {
 		Bruch bruch1 = new Bruch(1, 2);
