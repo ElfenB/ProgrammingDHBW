@@ -8,6 +8,7 @@ public class AutoBenutzen {
 		auto.einsteigen(1);
 		System.out.println(auto.insassenAnzahl);
 		System.out.println(auto.tankInhalt);
+		System.out.println(Auto.autoAnzahl);
 	}
 	
 }
