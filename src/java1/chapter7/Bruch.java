@@ -60,5 +60,24 @@ public class Bruch {
 		return new Bruch(nenner, zaehler);
 	}
 	
+	public Bruch multiplizieren(Bruch input) {
+		return new Bruch(zaehler * input.zaehler, nenner * input.nenner);
+	}
+	
+	public Bruch dividieren(Bruch input) {
+		return new Bruch(zaehler * input.nenner, nenner * input.zaehler);
+	}
+	
+	public Bruch potenzieren(int exponent) {
+		if (exponent < 0) {
+			exponent *= -1;
+			return new Bruch((long) Math.pow(nenner, exponent), (long) Math.pow(zaehler, exponent));
+		} else {
+			return new Bruch((long) Math.pow(zaehler, exponent), (long) Math.pow(nenner, exponent));
+		}
+	}
+	
+	
+	
 	
 }
