@@ -261,6 +261,7 @@ public class Calculator {
         return result;
 	}
 	
+	// Instructions for ggT method
 	public static void ggTInstructions(Scanner scan) {
 		System.out.println("Bitte erste Zahl eingeben:");
 		int firstNumber = scan.nextInt();
@@ -269,6 +270,14 @@ public class Calculator {
 		System.out.println("Das ggT der beiden Zahlen \"" + firstNumber + "\" und \"" + secondNumber + "\" ist: " + ggT(firstNumber, secondNumber) + ".");
 	}
 	
+	/**
+	 * @param a first number
+	 * @param b second number
+	 * @return ggT (gcd) of a & b
+	 * 
+	 * This method gives back the ggT (gcd) of two positive numbers
+	 * 
+	 */
 	public static int ggT(int a, int b) {
 		int x = a, y = b;
 		while (x != y) {
