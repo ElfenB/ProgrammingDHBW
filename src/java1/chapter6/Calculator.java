@@ -22,6 +22,7 @@ public class Calculator {
 		System.out.println("5: Primzahltest");
 		System.out.println("6: Potenzberechnung");
 		System.out.println("7: Quersumme");
+		System.out.println("8. ggT bestimmen");
 		System.out.println("0: Programm beenden");
 		System.out.println("==========================================");
 	}
@@ -260,6 +261,26 @@ public class Calculator {
         return result;
 	}
 	
+	public static void ggTInstructions(Scanner scan) {
+		System.out.println("Bitte erste Zahl eingeben:");
+		int firstNumber = scan.nextInt();
+		System.out.println("Bitte zweite Zahl eingeben:");
+		int secondNumber = scan.nextInt();
+		System.out.println("Das ggT der beiden Zahlen \"" + firstNumber + "\" und \"" + secondNumber + "\" ist: " + ggT(firstNumber, secondNumber) + ".");
+	}
+	
+	public static int ggT(int a, int b) {
+		int x = a, y = b;
+		while (x != y) {
+			if (x > y) {
+				x -= y;
+			} else {
+				x -= y;
+			}
+		}
+		return x;
+	}
+	
 	// TODO include menu method to display menu again when switch is empty (Enter to exit function)
 	/////////////////////// MAIN
 	/**
@@ -320,6 +341,11 @@ public class Calculator {
 				break;
 			case "7":
 				digitSumInstructions(scan);
+				terminateProgram();
+				finished = true;
+				break;
+			case "8":
+				ggTInstructions(scan);
 				terminateProgram();
 				finished = true;
 				break;
