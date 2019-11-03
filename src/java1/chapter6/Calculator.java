@@ -275,7 +275,7 @@ public class Calculator {
 			if (x > y) {
 				x -= y;
 			} else {
-				x -= y;
+				y -= x;
 			}
 		}
 		return x;
