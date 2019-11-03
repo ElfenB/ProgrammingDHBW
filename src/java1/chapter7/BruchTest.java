@@ -8,6 +8,7 @@ public class BruchTest {
 		Bruch bruch2 = new Bruch(3, 4);
 		Bruch bruch3 = new Bruch(1, 2);
 		
+		// heading
 		System.out.println("<== Testklasse für Bruchrechnungsklasse ==>");
 		
 // NEGATION
