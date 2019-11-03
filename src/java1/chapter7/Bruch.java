@@ -44,6 +44,10 @@ public class Bruch {
 		return (zaehler + "/" + nenner);
 	}
 	
+	public double toDouble() {
+		return (double) zaehler / nenner;
+	}
+	
 	public Bruch addiere(Bruch input) {
 		return new Bruch(zaehler * input.nenner + input.zaehler * nenner, nenner * input.nenner);
 	}
@@ -55,4 +59,6 @@ public class Bruch {
 	public Bruch kehrwert () {
 		return new Bruch(nenner, zaehler);
 	}
+	
+	
 }
