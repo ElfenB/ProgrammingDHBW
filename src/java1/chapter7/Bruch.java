@@ -52,5 +52,7 @@ public class Bruch {
 		return new Bruch(zaehler * input.nenner - input.zaehler * nenner, nenner * input.nenner);
 	}
 	
-	
+	public Bruch kehrwert () {
+		return new Bruch(nenner, zaehler);
+	}
 }
