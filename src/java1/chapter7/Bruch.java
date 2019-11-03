@@ -47,4 +47,10 @@ public class Bruch {
 	public Bruch addiere(Bruch input) {
 		return new Bruch(zaehler * input.nenner + input.zaehler * nenner, nenner * input.nenner);
 	}
+	
+	public Bruch substrahiere (Bruch input) {
+		return new Bruch(zaehler * input.nenner - input.zaehler * nenner, nenner * input.nenner);
+	}
+	
+	
 }

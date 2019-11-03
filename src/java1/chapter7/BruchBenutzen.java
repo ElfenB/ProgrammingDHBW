@@ -11,5 +11,6 @@ public class BruchBenutzen {
 		System.out.println("<======================>");
 		Bruch bruch2 = new Bruch(3, 4);
 		System.out.println("Addition von: " + bruch1.toString() + " und " + bruch2.toString() + " ist " + (bruch1.addiere(bruch2).toString()));
+		System.out.println("Substraktion von: " + bruch1.toString() + " und " + bruch2.toString() + " ist " + (bruch1.substrahiere(bruch2).toString()));
 	}
 }
