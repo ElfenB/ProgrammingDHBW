@@ -23,8 +23,14 @@ public class Bruch {
 		// assign given values to final longs
 		if (nenner < 0) {
 			zaehler *= -1;
+			nenner *= -1;
 		}
-//		Calculator.ggT(zaehler, nenner);
+		// TODO takes way too long
+//		int ggT = Calculator.ggT((int) zaehler, (int) nenner);
+//		if (ggT > 1) {
+//			zaehler /= ggT;
+//			nenner /= ggT;
+//		}
 		this.zaehler = zaehler;
 		this.nenner = nenner;
 	}
