@@ -1,5 +1,12 @@
 package java1.chapter7;
 
+/**
+ * @author Benjamin Elfen
+ * 
+ * Test class for Bruch calculator
+ * Prints ok if method works and FEHLER if not
+ *
+ */
 public class BruchTest {
 
 	public static void main(String[] args) {
