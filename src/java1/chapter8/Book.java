@@ -66,6 +66,10 @@ public class Book {
     	this.shelfNumber = newShelfnumber;
     }
     
+    public int getNumberOfBooks() {
+    	return numberOfBooks;
+    }
+    
     
     
 }
