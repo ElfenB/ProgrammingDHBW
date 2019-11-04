@@ -37,5 +37,6 @@ public class BruchBenutzen {
 		} else {
 			System.out.println("Bruch " + bruch2.toString() + " und " + bruch3.toString() + " sind NICHT gleich.");
 		}
+		System.out.println(bruch1); // toString method can be left out because it's the standard name for objects
 	}
 }
