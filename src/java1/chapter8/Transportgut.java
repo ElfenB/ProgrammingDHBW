@@ -1,27 +1,31 @@
 package java1.chapter8;
 
 public class Transportgut {
-	private int weight;
-	private int size;
+	private double weight;
+	private double size;
 	
-	public Transportgut(int weight, int size) {
+	public Transportgut(double weight, double size) {
 		this.weight = weight;
 		this.size = size;
 	}
 	
-	public int getWeight() {
+	public double getWeight() {
 		return this.weight;
 	}
 	
-	public void setWeight(int newWeight) {
+	public void setWeight(double newWeight) {
 		this.weight = newWeight;
 	}
 	
-	public int getSize() {
+	public double getSize() {
 		return this.size;
 	}
 	
-	public void setSize(int newSize) {
+	public void setSize(double newSize) {
 		this.size = newSize;
+	}
+	
+	public String toString() {
+		return "Weight: " + this.getWeight() + ", Size: " + this.getSize();
 	}
 }

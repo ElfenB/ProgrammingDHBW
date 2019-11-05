@@ -3,40 +3,41 @@ package java1.chapter8;
 public class Container {
 	
 	/** maxWeight in kilograms */
-	private final int maxLoad;
+	private final double maxLoad;
 	/** loaded amount in kilograms */
-	private int load;
+	private double load;
 	/** size in liters */
-	private final int space;
+	private final double space;
 	/** occuped size in liters*/
-	private int fullSpace;
+	private double fullSpace;
 	private int ID;
 	private static int numberOfContainers;
+	private int numberOfTransportgüter;
 	
-	public Container(int load, int space) {
+	public Container(double load, double space) {
 		this.space = space;
 		this.maxLoad = load;
 		numberOfContainers++;
 		this.ID = numberOfContainers;
 	}
 	
-	public int getSpace() {
+	public double getSpace() {
 		return this.space;
 	}
 	
-	public int getFreeSpace() {
+	public double getFreeSpace() {
 		return this.getSpace() - this.fullSpace;
 	}
 	
-	public int getMaxLoad() {
+	public double getMaxLoad() {
 		return this.maxLoad;
 	}
 	
-	public int getLoad() {
+	public double getLoad() {
 		return this.load;
 	}
 	
-	public int getFreeLoad() {
+	public double getFreeLoad() {
 		return this.getMaxLoad() - this.getLoad();
 	}
 	
@@ -48,17 +49,31 @@ public class Container {
 		return numberOfContainers;
 	}
 	
+	public int getNumberOfTransportgüter() {
+		return this.numberOfTransportgüter;
+	}
+	
 	public String toString() {
 		return "ID: " + this.getID() + ", MaxLoad: " + this.getMaxLoad() + ", FreeLoad: " + this.getFreeLoad() + ", Space: " + this.getSpace() + ", FreeSpace: " + this.getFreeSpace();
 	}
 	
-	public boolean beladen(Transportgut newTransportgut) {
-		if ((newTransportgut.getSize() <= this.getFreeSpace()) & (newTransportgut.getWeight() <= this.getFreeLoad())) {
-			this.load += newTransportgut.getWeight();
-			this.fullSpace += newTransportgut.getSize();
-			return true;
+	public boolean beladen(Transportgut newTransportgut, boolean WithOutput) {
+		if (WithOutput) {
+			System.out.println(this.toString());
+			System.out.println("Package: " + newTransportgut);
+			this.beladen(newTransportgut, false);
+			System.out.println(this.toString());
+			return beladen(newTransportgut, false);
 		} else {
-			return false;
+			if ((newTransportgut.getSize() <= this.getFreeSpace()) & (newTransportgut.getWeight() <= this.getFreeLoad())) {
+				this.load += newTransportgut.getWeight();
+				this.fullSpace += newTransportgut.getSize();
+				this.numberOfTransportgüter++;
+				return true;
+			} else {
+//				throw new NullPointerException("demo");
+				return false;
+			}
 		}
 	}
 	
