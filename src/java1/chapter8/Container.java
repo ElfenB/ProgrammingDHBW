@@ -2,34 +2,64 @@ package java1.chapter8;
 
 public class Container {
 	
-	// weight in kilograms
-	public int weight;
-	// size in liters
-	public int size;
-	public int ID;
-	public static int numberOfContainers;
+	/** maxWeight in kilograms */
+	private final int maxLoad;
+	/** loaded amount in kilograms */
+	private int load;
+	/** size in liters */
+	private final int space;
+	/** occuped size in liters*/
+	private int fullSpace;
+	private int ID;
+	private static int numberOfContainers;
 	
-	public Container(int weight, int size) {
-		this.size = size;
-		this.weight = weight;
+	public Container(int load, int space) {
+		this.space = space;
+		this.maxLoad = load;
 		numberOfContainers++;
 		this.ID = numberOfContainers;
-		
 	}
 	
-	public int getSize() {
-		return this.size;
+	public int getSpace() {
+		return this.space;
 	}
 	
-	public void setSize(int newSize) {
-		this.size = newSize;
+	public int getFreeSpace() {
+		return this.getSpace() - this.fullSpace;
 	}
 	
-	public int getWeight() {
-		return this.weight;
+	public int getMaxLoad() {
+		return this.maxLoad;
 	}
 	
-	public void setWeight(int newWeight) {
-		this.weight = newWeight;
+	public int getLoad() {
+		return this.load;
 	}
+	
+	public int getFreeLoad() {
+		return this.getMaxLoad() - this.getLoad();
+	}
+	
+	public int getID() {
+		return this.ID;
+	}
+	
+	public static int getNumberOfContainers() {
+		return numberOfContainers;
+	}
+	
+	public String toString() {
+		return "ID: " + this.getID() + ", MaxLoad: " + this.getMaxLoad() + ", FreeLoad: " + this.getFreeLoad() + ", Space: " + this.getSpace() + ", FreeSpace: " + this.getFreeSpace();
+	}
+	
+	public boolean beladen(Transportgut newTransportgut) {
+		if ((newTransportgut.getSize() <= this.getFreeSpace()) & (newTransportgut.getWeight() <= this.getFreeLoad())) {
+			this.load += newTransportgut.getWeight();
+			this.fullSpace += newTransportgut.getSize();
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 }
