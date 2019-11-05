@@ -9,7 +9,7 @@ public class Book {
     private boolean available;          // is the book available?
     private int shelfNumber;            // shelf number of the book
     
-    public Book(String author, String title, long isbn13, boolean hardcover, boolean available, int shelfNumber) {
+    public Book(String author, String title, long isbn13, boolean hardcover) {
     	numberOfBooks++;
     	this.author = author;
     	this.title = title;
@@ -66,7 +66,7 @@ public class Book {
     	this.shelfNumber = newShelfnumber;
     }
     
-    public int getNumberOfBooks() {
+    public static int getNumberOfBooks() {
     	return numberOfBooks;
     }
     
