@@ -1,4 +1,4 @@
-package testingInLessons;
+package testingInLessons.personenAufgabeChapter9;
 public class Lehrer extends Person {            // Lehrer ist Subklasse von Person
     private String personalnummer;              // eigene Instanzvariablen
     private double gehalt;

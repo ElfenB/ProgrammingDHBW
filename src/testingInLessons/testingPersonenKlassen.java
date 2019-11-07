@@ -1,5 +1,7 @@
 package testingInLessons;
 
+import testingInLessons.personenAufgabeChapter9.Lehrer;
+
 public class testingPersonenKlassen {
 
 	public static void main(String[] args) {

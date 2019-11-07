@@ -1,4 +1,4 @@
-package testingInLessons;
+package testingInLessons.personenAufgabeChapter9;
 public class Person {
     private String vorname;
     private String nachname;
