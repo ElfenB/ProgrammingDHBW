@@ -16,5 +16,4 @@ public class HaustierTest {
 		ZweibeinerHaustier Kanarienvogel = new ZweibeinerHaustier("Cookie");
 		System.out.println(Kanarienvogel);
 	}
-	
 }

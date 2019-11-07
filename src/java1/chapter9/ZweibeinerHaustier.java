@@ -8,5 +8,4 @@ public class ZweibeinerHaustier extends Haustier {
 	public ZweibeinerHaustier(String name) {
 		super(name, 2);
 	}
-
 }

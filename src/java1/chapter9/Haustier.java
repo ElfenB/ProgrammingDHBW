@@ -29,6 +29,4 @@ public class Haustier {
     public String toString() {
     	return "Dieses Tier hat " + getAnzahlBeine() + " Beine und heißt " + getName() + ".";
     }
-    
-    // TODO main-Methode mit einfachem Test
 }
