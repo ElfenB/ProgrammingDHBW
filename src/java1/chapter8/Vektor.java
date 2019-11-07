@@ -50,6 +50,10 @@ public class Vektor {
 		return (this.getX() * input.getX() + this.getY() * input.getY() + this.getZ() * input.getZ());
 	}
 	
+	public String toString() {
+		return this.getX() + "/" + this.getY() + "/" + this.getZ();
+	}
+	
 	
 	
 }
