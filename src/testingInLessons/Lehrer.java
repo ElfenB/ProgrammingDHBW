@@ -21,4 +21,8 @@ public class Lehrer extends Person {            // Lehrer ist Subklasse von Pers
     public void setGehalt(double gehalt) {      // Setter für eigene Instanzvariable
         this.gehalt = gehalt;
     }
+    
+    public String toString() {
+    	return getName() + " *" + getGeburtsjahr() + " Beruf: Lehrer";
+    }
 }
