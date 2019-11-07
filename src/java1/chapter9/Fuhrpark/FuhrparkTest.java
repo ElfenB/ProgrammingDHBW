@@ -9,6 +9,10 @@ public class FuhrparkTest {
 		System.out.println(Beetle);
 		System.out.println(Er6n);
 		
+		Flugzeug AirbusA380 = new Flugzeug(853, 4, 38);
+		
+		System.out.println(AirbusA380);
+		
 		
 	}
 
