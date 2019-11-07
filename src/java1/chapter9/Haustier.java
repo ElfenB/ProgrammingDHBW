@@ -1,9 +1,17 @@
 package java1.chapter9;
 
+/**
+ * @author Benjamin Elfen
+ *
+ */
 public class Haustier {
 	private String name;
     private int anzahlBeine;
 
+    /**
+     * @param name is the name of the pet
+     * @param anzahlBeine is the number of legs of the pet
+     */
     protected Haustier(String name, int anzahlBeine) {
         super();                                        // optional
         this.name = name;
