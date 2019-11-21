@@ -5,7 +5,7 @@ public class NewTest {
 	public static void main(String[] args) {
 		// output
 		System.out.println("Hello World!");
-		// test comment
+		// test comment 1
 	}
 
 }
