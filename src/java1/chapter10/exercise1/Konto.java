@@ -1,4 +1,4 @@
-package java1.chapter10;
+package java1.chapter10.exercise1;
 /**
  * 
  * @author Benjamin Elfen
