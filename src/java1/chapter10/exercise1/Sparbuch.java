@@ -5,6 +5,8 @@ package java1.chapter10.exercise1;
  *
  */
 public class Sparbuch extends Konto {
+	private final double GUTHABENZINS = 0.01;
+	
 	public Sparbuch(long nummer) {
 		super(nummer);
 	}
@@ -18,5 +20,9 @@ public class Sparbuch extends Konto {
 			// must return to super class
             super.auszahlen(betrag);
         }
+	}
+	
+	public double getGUTHABENZINS() {
+		return GUTHABENZINS;
 	}
 }

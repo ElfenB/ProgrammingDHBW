@@ -6,7 +6,7 @@ package java1.chapter10.exercise1;
  * Ein Konto mit Kontonummer und Saldo, das Ein- und Auszahlungen unterstützt.
  * 
  */
-public class Konto {
+public abstract class Konto {
     private final long nummer;      // Kontonummer
     private double saldo = 0;       // aktueller Saldo
 
