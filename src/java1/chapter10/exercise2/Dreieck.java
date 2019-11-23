@@ -20,7 +20,8 @@ public class Dreieck extends GeometrischeFigur {
 
 	@Override
 	public double getFlaeche() {
-		return (seiteA * seiteB) / 2;
+		double s = (seiteA + seiteB + seiteC) / 2;
+		return Math.sqrt(s * (s - seiteA) * (s - seiteB) * (s - seiteC));
 	}
 
 	@Override
@@ -30,10 +31,6 @@ public class Dreieck extends GeometrischeFigur {
 
 	@Override
 	public String getBeschreibung() {
-		if (seiteA == seiteB & seiteB == seiteC) {
-			return "Gleichseitiges Dreieck (Seitenlänge: " + seiteA + ")";
-		} else {
-			return "Dreieck (Seitenlängen: " + seiteA + ", " + seiteB + ", " + seiteC + ")";
-		}
+		return "Dreieck (Seitenlängen: " + seiteA + ", " + seiteB + ", " + seiteC + ")";
 	}
 }

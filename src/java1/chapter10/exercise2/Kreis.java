@@ -21,7 +21,7 @@ public class Kreis extends GeometrischeFigur {
 
 	@Override
 	public double getUmfang() {
-		return Math.PI * radius;
+		return Math.PI * 2 * radius;
 	}
 
 	@Override
