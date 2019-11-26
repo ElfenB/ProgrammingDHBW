@@ -68,6 +68,21 @@ public class MatrixCalculation {
 		return result;
 	}
 	
+//	public static double[][] matrixProduct(double[][] first, double[][] second) {
+//		if (sameDimensions(first, second)) {
+//			double[][] result = new double[first.length][first[1].length];
+//			for (int i = 0; i < first.length; i++) {
+//				for (int j = 0; j < first.length; j++) {
+//					for (int j2 = 0; j2 < second[1].length; j2++) {
+//						result[i][j] += first[i][j] * second[i][j2];
+//					}
+//				}
+//			} 
+//		}
+//		// this is the not save return value if the matrixes do not have the same dimensions
+//		return new double[0][0];
+//	}
+	
 	/**
 	 * @param output matrix for printing in console
 	 */
@@ -97,5 +112,9 @@ public class MatrixCalculation {
 		print3(sum(a, b));
 		print3(a);
 		print3(product(a, 2));
+		
+//		print3(a);
+//		print3(b);
+//		print3(matrixProduct(a, b));
 	}
 }
