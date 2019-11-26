@@ -92,6 +92,7 @@ public class VectorCalculator {
     }
 
     public static void main(String[] args) {
+    	// testing outputs
         double[] a = {1, 2, 3};
         double[] b = {4, 5, 6};
         double[] c = {4, 5};
