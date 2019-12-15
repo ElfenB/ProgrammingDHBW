@@ -1,6 +1,10 @@
 package testingInLessons;
 
 public class Test1 {
+	public Test1() {
+		
+	}
+	private static String test3;
 	public static void main(String[] args) {
 		var test = 3;
 		var nochEinTest = 4;
@@ -22,5 +26,12 @@ public class Test1 {
 		System.out.println(9);
 		java.math.BigDecimal blabla = new java.math.BigDecimal(3);
 		System.out.println(blabla);
+		System.out.println(test3);
+		Test1 blublu = new Test1();
+		System.out.println(blublu);
+	}
+	
+	public void testing3() {
+		
 	}
 }
