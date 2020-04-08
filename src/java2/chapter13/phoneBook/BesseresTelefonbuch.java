@@ -24,30 +24,34 @@ public class BesseresTelefonbuch {
         }
 		if (BesseresTelefonbuch[0] == null) {
 			BesseresTelefonbuch[0] = eintrag;
-			System.out.println("null");
+//			System.out.println("null");              // debugging
+			return;
 //			break;
 		}
 		
 		int i = 0;
 		while (i < entries + 1) {
+			System.out.println(i + "" + eintrag.getName().compareTo(BesseresTelefonbuch[i].getName()));              // debugging
 			if (eintrag.getName().compareTo(BesseresTelefonbuch[i].getName()) <= -1) {
-				System.out.println("-1");
+//				System.out.println("-1");              // debugging
 				for (int j = entries + 1; j > i; j--) {
 					BesseresTelefonbuch[j] = BesseresTelefonbuch[j - 1];
 				}
 				BesseresTelefonbuch[i] = eintrag;
-//				i = entries + 1;
-				break;
+				return;
 			} else if (eintrag.getName().compareTo(BesseresTelefonbuch[i].getName()) == 0) {
-				System.out.println("0");
+				System.out.println("Eintrag schon vorhanden.");
+//				System.out.println("0");              // debugging
 //				throw new IllegalStateException("Eintrag schon vorhanden.");
-//				i = entries + 1;
-				break;
-			} else if (eintrag.getName().compareTo(BesseresTelefonbuch[i].getName()) >= 1) {
-				System.out.println("1");
+				return;
+			} else if (BesseresTelefonbuch[i + 1] == null & eintrag.getName().compareTo(BesseresTelefonbuch[i].getName()) == 1) {
+//				System.out.println("1");              // debugging
 				BesseresTelefonbuch[++entries] = eintrag;
-//				i = entries + 1;
-				break;
+				return;
+			} else if (i == entries & eintrag.getName().compareTo(BesseresTelefonbuch[i].getName()) >= 1) {
+//				System.out.println("1");              // debugging
+				BesseresTelefonbuch[++entries] = eintrag;
+				return;
 			}
 				
 			i++;

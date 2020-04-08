@@ -30,7 +30,17 @@ public class TestingBesseresTelefonbuch {
 		System.out.println(GelbeSeiten);
 		GelbeSeiten.add(new Telefonbucheintrag("a", "654654654654"));
 		System.out.println(GelbeSeiten);
-		
+		GelbeSeiten.add(new Telefonbucheintrag("k", "654654654654"));
+		System.out.println(GelbeSeiten);
+		GelbeSeiten.add(new Telefonbucheintrag("m", "654654654654"));
+		System.out.println(GelbeSeiten);
+		GelbeSeiten.add(new Telefonbucheintrag("i", "654654654654"));
+		System.out.println(GelbeSeiten);
+		GelbeSeiten.add(new Telefonbucheintrag("f", "654654654654"));
+		System.out.println(GelbeSeiten);
+		GelbeSeiten.add(new Telefonbucheintrag("y", "654654654654"));
+		System.out.println(GelbeSeiten);
+
 	}
 
 }
