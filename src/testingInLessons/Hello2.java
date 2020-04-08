@@ -28,8 +28,8 @@ public class Hello2 {
 		System.out.println(test.length);
 		test[99] = "";
 		
-		String string2 = "clabla";
-		String string3 = "e";
+		String string2 = "a";
+		String string3 = "d";
 		
 		System.out.println(string2.compareTo(string3));
 	}
