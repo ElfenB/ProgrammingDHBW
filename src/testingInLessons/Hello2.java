@@ -27,6 +27,12 @@ public class Hello2 {
 		String[] test = new String[100];
 		System.out.println(test.length);
 		test[99] = "";
+		
+		String string1 = null;
+		String string2 = "blabla";
+		String string3 = "a";
+		
+		System.out.println(string2.compareTo(string3));
 	}
 
 }
