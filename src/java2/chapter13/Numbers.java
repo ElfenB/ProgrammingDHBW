@@ -28,6 +28,7 @@ public abstract class Numbers {
         print();
         for (int key = 0; key < 10; key++) {
             System.out.println(key + "? " + search(key));
+            print();						// erneute Ausgabe des ggf. umgebauten Feldes
         }
     }
 }
