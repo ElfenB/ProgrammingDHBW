@@ -8,5 +8,5 @@ package java2.chapter13;
  *
  */
 public class EigenerSortieralgorithmus {
-
+	
 }
