@@ -22,6 +22,11 @@ public class Hello2 {
 		System.out.println(-0x10);
 		System.out.println(0b11110);
 		System.out.println(0215);
+		
+		System.out.println(new String[100].length);
+		String[] test = new String[100];
+		System.out.println(test.length);
+		test[99] = "";
 	}
 
 }
