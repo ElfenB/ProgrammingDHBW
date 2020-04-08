@@ -16,30 +16,42 @@ public class BesseresTelefonbuch {
 	private Telefonbucheintrag[] BesseresTelefonbuch = new Telefonbucheintrag[100];
 		
 	//adds new entries to phone book
-	public String add(Telefonbucheintrag eintrag) {
+	public void add(Telefonbucheintrag eintrag) {
 		
 		// TODO add methode schreiben
-//		if (entries == BesseresTelefonbuch.length) {
-//            throw new IllegalStateException("Telefonbuch ist schon voll.");
-//        }
-//		
-//		int i = 0;
-//		while (eintrag.getName().compareTo(BesseresTelefonbuch[i].getName()) == -1) {
-//			i++;
-//		}
-//		if (eintrag.getName().compareTo(BesseresTelefonbuch[i].getName()) == 0) {
-//			return "Eintrag schon vorhanden";
-//		}
-//		if (eintrag.getName().compareTo(BesseresTelefonbuch[i].getName()) == 1) {
-//			int j = i;
-//			while (BesseresTelefonbuch[j].getName() != null & j != BesseresTelefonbuch.length) {
-//				BesseresTelefonbuch[j + 1] = BesseresTelefonbuch[j];
-//				j++;
-//			}
-//		}
-//		
-//		BesseresTelefonbuch[entries++] = eintrag;
-//		return "Eintragung erfolgreich";
+		if (entries == BesseresTelefonbuch.length) {
+            throw new IllegalStateException("Telefonbuch ist schon voll.");
+        }
+		if (BesseresTelefonbuch[0] == null) {
+			BesseresTelefonbuch[0] = eintrag;
+			System.out.println("null");
+//			break;
+		}
+		
+		int i = 0;
+		while (i < entries + 1) {
+			if (eintrag.getName().compareTo(BesseresTelefonbuch[i].getName()) <= -1) {
+				System.out.println("-1");
+				for (int j = entries + 1; j > i; j--) {
+					BesseresTelefonbuch[j] = BesseresTelefonbuch[j - 1];
+				}
+				BesseresTelefonbuch[i] = eintrag;
+//				i = entries + 1;
+				break;
+			} else if (eintrag.getName().compareTo(BesseresTelefonbuch[i].getName()) == 0) {
+				System.out.println("0");
+//				throw new IllegalStateException("Eintrag schon vorhanden.");
+//				i = entries + 1;
+				break;
+			} else if (eintrag.getName().compareTo(BesseresTelefonbuch[i].getName()) >= 1) {
+				System.out.println("1");
+				BesseresTelefonbuch[++entries] = eintrag;
+//				i = entries + 1;
+				break;
+			}
+				
+			i++;
+		}
 		
 	}
 	
