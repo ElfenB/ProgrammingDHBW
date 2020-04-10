@@ -23,7 +23,7 @@ public class SelectionSort<T extends Comparable<T>> extends SortingAlgorithm<T> 
 
     public static void main(String[] args) {
         new SortingAlgorithmEvaluator<Integer>().evaluate(
-            new SelectionSort<>(), new Integer[] { 5, 4, 8, 6, 3, 10, 2, 7, 9, 1 }, true
+            new SelectionSort<>(), new Integer[] { 5, 2, 1, 7, 4, 6, 3 }, true
         );
     }
 }

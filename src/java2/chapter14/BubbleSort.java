@@ -14,7 +14,7 @@ public class BubbleSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
 
     public static void main(String[] args) {
         new SortingAlgorithmEvaluator<Integer>().evaluate(
-            new BubbleSort<>(), new Integer[] { 5, 4, 8, 6, 3, 10, 2, 7, 9, 1 }, true
+            new BubbleSort<>(), new Integer[] { 5, 2, 1, 7, 4, 6, 3 }, true
         );
     }
 }
