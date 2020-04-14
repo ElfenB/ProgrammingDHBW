@@ -36,6 +36,13 @@ public class Hello2 {
 		System.out.println(string2.compareTo(string3));
 		
 		System.out.println(Arrays.toString(new int[5]));
+		
+		long start = System.currentTimeMillis();
+		for (int i = 0; i < 200000000; i++) {
+			i++;
+		}
+		System.out.println(start);
+		System.out.println(System.currentTimeMillis());
 	}
 
 }
