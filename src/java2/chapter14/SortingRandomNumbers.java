@@ -61,6 +61,13 @@ public class SortingRandomNumbers {
 		System.out.print("time needed: " + (System.currentTimeMillis() - start) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
+		// Arrays.parallelSort()
+		System.out.print("Arrays.parallelSort():  ");
+		long start5 = System.currentTimeMillis();
+		Arrays.parallelSort(data);
+		System.out.print("time needed: " + (System.currentTimeMillis() - start5) + "ms ");
+		System.out.print(check(data) ? "✓\n" : "ERROR\n");
+		
 		// FaultySort
 		System.out.print("FaultySort:     ");
 		long start4 = System.currentTimeMillis();
