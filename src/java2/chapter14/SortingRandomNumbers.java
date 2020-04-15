@@ -52,10 +52,10 @@ public class SortingRandomNumbers {
 	public static void main(String[] args) {
 		Integer[] data = new Integer[getArraySize()];
 
+		fillArrayR(data);
 		
 		// Arrays.sort()
 		System.out.print("Arrays.sort():  ");
-		fillArrayR(data);
 		long start = System.currentTimeMillis();
 		Arrays.sort(data);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start) + "ms ");
@@ -63,7 +63,6 @@ public class SortingRandomNumbers {
 		
 		// FaultySort
 		System.out.print("FaultySort:     ");
-		fillArrayR(data);
 		long start4 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new FaultySort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start4) + "ms ");
@@ -71,7 +70,6 @@ public class SortingRandomNumbers {
 		
 		// Bubblesort
 		System.out.print("Bubblesort:     ");
-		fillArrayR(data);
 		long start1 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new BubbleSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start1) + "ms ");
@@ -79,7 +77,6 @@ public class SortingRandomNumbers {
 		
 		// InsertionSort
 		System.out.print("InsertionSort:  ");
-		fillArrayR(data);
 		long start2 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new InsertionSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start2) + "ms ");
@@ -87,7 +84,6 @@ public class SortingRandomNumbers {
 		
 		// SelectionSort
 		System.out.print("SelectionSort:  ");
-		fillArrayR(data);
 		long start3 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new SelectionSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start3) + "ms ");
