@@ -99,21 +99,21 @@ public class SortingRandomNumbers {
 		
 		// FASTER ADVANCED ALGORITHMS
 		// QuickSort
-		System.out.print("QuickSort:     ");
+		System.out.print("QuickSort:      ");
 		long start6 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new QuickSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start6) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
 		// MergeSort
-		System.out.print("MergeSort:  ");
+		System.out.print("MergeSort:      ");
 		long start7 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new MergeSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start7) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
 		// HeapSort
-		System.out.print("HeapSort:  ");
+		System.out.print("HeapSort:       ");
 		long start8 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new HeapSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start8) + "ms ");
