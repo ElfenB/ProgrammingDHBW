@@ -75,6 +75,7 @@ public class SortingRandomNumbers {
 		System.out.print("time needed: " + (System.currentTimeMillis() - start4) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
+		// SLOWER PRIMITIVE ALGORITHMS
 		// Bubblesort
 		System.out.print("Bubblesort:     ");
 		long start1 = System.currentTimeMillis();
@@ -94,6 +95,28 @@ public class SortingRandomNumbers {
 		long start3 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new SelectionSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start3) + "ms ");
+		System.out.print(check(data) ? "✓\n" : "ERROR\n");
+		
+		// FASTER ADVANCED ALGORITHMS
+		// QuickSort
+		System.out.print("QuickSort:     ");
+		long start6 = System.currentTimeMillis();
+		new SortingAlgorithmEvaluator<Integer>().evaluate(new QuickSort<>(), data, false);
+		System.out.print("time needed: " + (System.currentTimeMillis() - start6) + "ms ");
+		System.out.print(check(data) ? "✓\n" : "ERROR\n");
+		
+		// MergeSort
+		System.out.print("MergeSort:  ");
+		long start7 = System.currentTimeMillis();
+		new SortingAlgorithmEvaluator<Integer>().evaluate(new MergeSort<>(), data, false);
+		System.out.print("time needed: " + (System.currentTimeMillis() - start7) + "ms ");
+		System.out.print(check(data) ? "✓\n" : "ERROR\n");
+		
+		// HeapSort
+		System.out.print("HeapSort:  ");
+		long start8 = System.currentTimeMillis();
+		new SortingAlgorithmEvaluator<Integer>().evaluate(new HeapSort<>(), data, false);
+		System.out.print("time needed: " + (System.currentTimeMillis() - start8) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
 	}
