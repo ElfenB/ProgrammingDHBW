@@ -51,16 +51,17 @@ public class SortingRandomNumbers {
 	
 	public static void main(String[] args) {
 		Integer[] data = new Integer[getArraySize()];
-
 		fillArrayR(data);
+		Integer[] data1 = Arrays.copyOf(data, data.length);
 		
 		// Arrays.sort()
-		System.out.print("Arrays.sort():  ");
+		System.out.print("Arrays.sort():          ");
 		long start = System.currentTimeMillis();
 		Arrays.sort(data);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
+		data = Arrays.copyOf(data1, data1.length); // reset Array
 		// Arrays.parallelSort()
 		System.out.print("Arrays.parallelSort():  ");
 		long start5 = System.currentTimeMillis();
@@ -68,52 +69,59 @@ public class SortingRandomNumbers {
 		System.out.print("time needed: " + (System.currentTimeMillis() - start5) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
+		data = Arrays.copyOf(data1, data1.length); // reset Array
 		// FaultySort
-		System.out.print("FaultySort:     ");
+		System.out.print("FaultySort:             ");
 		long start4 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new FaultySort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start4) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
 		// SLOWER PRIMITIVE ALGORITHMS
+		data = Arrays.copyOf(data1, data1.length); // reset Array
 		// Bubblesort
-		System.out.print("Bubblesort:     ");
+		System.out.print("Bubblesort:             ");
 		long start1 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new BubbleSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start1) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
+		data = Arrays.copyOf(data1, data1.length); // reset Array
 		// InsertionSort
-		System.out.print("InsertionSort:  ");
+		System.out.print("InsertionSort:          ");
 		long start2 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new InsertionSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start2) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
+		data = Arrays.copyOf(data1, data1.length); // reset Array
 		// SelectionSort
-		System.out.print("SelectionSort:  ");
+		System.out.print("SelectionSort:          ");
 		long start3 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new SelectionSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start3) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
 		// FASTER ADVANCED ALGORITHMS
+		data = Arrays.copyOf(data1, data1.length); // reset Array
 		// QuickSort
-		System.out.print("QuickSort:      ");
+		System.out.print("QuickSort:              ");
 		long start6 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new QuickSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start6) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
+		data = Arrays.copyOf(data1, data1.length); // reset Array
 		// MergeSort
-		System.out.print("MergeSort:      ");
+		System.out.print("MergeSort:              ");
 		long start7 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new MergeSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start7) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
+		data = Arrays.copyOf(data1, data1.length); // reset Array
 		// HeapSort
-		System.out.print("HeapSort:       ");
+		System.out.print("HeapSort:               ");
 		long start8 = System.currentTimeMillis();
 		new SortingAlgorithmEvaluator<Integer>().evaluate(new HeapSort<>(), data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start8) + "ms ");
