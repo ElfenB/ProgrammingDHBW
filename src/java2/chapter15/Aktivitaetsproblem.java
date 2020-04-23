@@ -15,7 +15,7 @@ public class Aktivitaetsproblem {
 		// output array = size of input array but boolean instead of int
 		boolean[] output = new boolean[termine.length];
 		
-		// sorts array - no idea how but it works
+		// sorts array without mixing up dimensions - no idea how but it works - requires Java8+
 		Arrays.sort(termine, (a, b) -> Double.compare(a[0], b[0]));
 
 		output[0] = true;	// erstes Event wird besucht
