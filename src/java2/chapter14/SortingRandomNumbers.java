@@ -73,7 +73,7 @@ public class SortingRandomNumbers {
 		// FaultySort
 		System.out.print("FaultySort:             ");
 		long start4 = System.currentTimeMillis();
-		new SortingAlgorithmEvaluator<Integer>().evaluate(new FaultySort<>(), data, false);
+		new FaultySort<Integer>().sort(data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start4) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
@@ -82,7 +82,7 @@ public class SortingRandomNumbers {
 		// Bubblesort
 		System.out.print("Bubblesort:             ");
 		long start1 = System.currentTimeMillis();
-		new SortingAlgorithmEvaluator<Integer>().evaluate(new BubbleSort<>(), data, false);
+		new BubbleSort<Integer>().sort(data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start1) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
@@ -90,7 +90,7 @@ public class SortingRandomNumbers {
 		// InsertionSort
 		System.out.print("InsertionSort:          ");
 		long start2 = System.currentTimeMillis();
-		new SortingAlgorithmEvaluator<Integer>().evaluate(new InsertionSort<>(), data, false);
+		new InsertionSort<Integer>().sort(data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start2) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
@@ -98,7 +98,7 @@ public class SortingRandomNumbers {
 		// SelectionSort
 		System.out.print("SelectionSort:          ");
 		long start3 = System.currentTimeMillis();
-		new SortingAlgorithmEvaluator<Integer>().evaluate(new SelectionSort<>(), data, false);
+		new SelectionSort<Integer>().sort(data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start3) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
@@ -107,7 +107,7 @@ public class SortingRandomNumbers {
 		// QuickSort
 		System.out.print("QuickSort:              ");
 		long start6 = System.currentTimeMillis();
-		new SortingAlgorithmEvaluator<Integer>().evaluate(new QuickSort<>(), data, false);
+		new QuickSort<Integer>().sort(data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start6) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
@@ -115,7 +115,7 @@ public class SortingRandomNumbers {
 		// MergeSort
 		System.out.print("MergeSort:              ");
 		long start7 = System.currentTimeMillis();
-		new SortingAlgorithmEvaluator<Integer>().evaluate(new MergeSort<>(), data, false);
+		new MergeSort<Integer>().sort(data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start7) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
@@ -123,7 +123,7 @@ public class SortingRandomNumbers {
 		// HeapSort
 		System.out.print("HeapSort:               ");
 		long start8 = System.currentTimeMillis();
-		new SortingAlgorithmEvaluator<Integer>().evaluate(new HeapSort<>(), data, false);
+		new HeapSort<Integer>().sort(data, false);
 		System.out.print("time needed: " + (System.currentTimeMillis() - start8) + "ms ");
 		System.out.print(check(data) ? "✓\n" : "ERROR\n");
 		
