@@ -1,4 +1,8 @@
-package java2.chapter16;
+package java2.chapter16.exercises;
+
+import java2.chapter16.List;
+import java2.chapter16.Node;
+
 public class FastLinkedList implements List {
     private Node first = null;              // erster Knoten der Liste
     private Node last = null;               // letzter Knoten der Liste
