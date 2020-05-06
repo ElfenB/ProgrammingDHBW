@@ -62,7 +62,7 @@ public class HausVomNikolaus {
 	private static void zugMachen(int start, boolean verbose) {
 		if (verbose) printOutHouse();
 		
-		// TODO Logik
+		// TODO Logik (es fehlt noch ein Zähler der Anzahl von Möglichkeiten)
 		
 		int target = wegenetz[start][cursor];
 		
